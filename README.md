@@ -1,24 +1,31 @@
-# README
+# Owners
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+資金を求める事業者へ、事業を応援する出資者からの資金を届けるサイト
 
-Things you may want to cover:
 
-* Ruby version
+### サイトテーマ
+事業者と出資者、お互いが自分のお店を持つ
 
-* System dependencies
 
-* Configuration
+### テーマを選んだ理由
+自分のお店を持ちたいけど資金がない、借金をするリスクも取れず中々行動できない事業者  
+身近にお気に入りのお店がない、あんなお店があればいいのにと思う出資者  
+お互いが叶えたい夢をインターネットの力で実現したいと思いこのテーマにしました
 
-* Database creation
 
-* Database initialization
+### ターゲットユーザ
+・自分のお店を開きたいが資金のない事業者  
+・自分の身近にお気に入りの店が欲しい人たち
 
-* How to run the test suite
+### 主な利用シーン
+新規事業を考える事業者の資金調達
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+## 設計書
+
+
+### 機能一覧
+
+https://docs.google.com/spreadsheets/d/1myLGtIT-6HC8Q6JbLdiu-K8rOvSSGpyIVK_mLLar5NA/edit#gid=0
