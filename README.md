@@ -35,7 +35,7 @@ https://app.diagrams.net/#G1a46fVSOKFrhjandn-JDFUl3AHUeDdpaF
 
 
 ## テーブル定義書
-
+https://docs.google.com/spreadsheets/d/1k_H6Zi0MowlwlX1i90iiYXCYclNRwL_apE_9o5OIiuc/edit#gid=37175578
 
 ## アプリケーション詳細設計書
 
