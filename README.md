@@ -31,18 +31,18 @@ https://docs.google.com/document/d/1bqiHd1JsZqYzliFzf4IKf1eZmYQqKJEiOThYO4tv1R8/
 
 
 ## ER図
-
 https://app.diagrams.net/#G1a46fVSOKFrhjandn-JDFUl3AHUeDdpaF
 
 
 ## テーブル定義書
 https://docs.google.com/spreadsheets/d/1k_H6Zi0MowlwlX1i90iiYXCYclNRwL_apE_9o5OIiuc/edit#gid=37175578
 
+
 ## アプリケーション詳細設計書
+https://docs.google.com/spreadsheets/d/1LXvBgy7WqnIXAV_yXLL4SPd3nxGcX1TARv3rKsjJi3Q/edit#gid=0
 
 
 ## 機能一覧
-
 https://docs.google.com/spreadsheets/d/1myLGtIT-6HC8Q6JbLdiu-K8rOvSSGpyIVK_mLLar5NA/edit#gid=0
 
 
