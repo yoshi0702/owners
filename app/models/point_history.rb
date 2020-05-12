@@ -1,0 +1,2 @@
+class PointHistory < ApplicationRecord
+end

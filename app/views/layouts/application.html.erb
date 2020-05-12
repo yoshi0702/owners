@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
   <head>
     <title>Owners</title>
@@ -10,6 +10,30 @@
   </head>
 
   <body>
-    <%= yield %>
+      <% if admin_signed_in? %>
+        <%= render 'layouts/admin_header' %>
+        <% elsif owner_signed_in? %>
+        <%= render "layouts/owner_header" %>
+        <% elsif supporter_signed_in?%>
+        <%= render "layouts/supporter_header" %>
+        <% else %>
+        <%= render "layouts/home_header" %>
+      <% end %>
+
+
+
+        <div class="container">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+        </div>
+
+
+      <%= yield %>
+
+      <%= render 'layouts/footer' %>
+
+
+
   </body>
 </html>

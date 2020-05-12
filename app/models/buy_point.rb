@@ -1,0 +1,2 @@
+class BuyPoint < ApplicationRecord
+end
