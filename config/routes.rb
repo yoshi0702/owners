@@ -7,7 +7,8 @@ Rails.application.routes.draw do
  resources :areas
  resources :owner
 
- get '/' => 'home#top'
+root 'home#top'
+get '/' ,to: 'home#top'
 # 支援者側のルーティング
   devise_for :supporters,controllers: {
   	sessions:      'supporters/sessions',
