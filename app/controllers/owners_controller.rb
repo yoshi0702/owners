@@ -3,6 +3,7 @@ class OwnersController < ApplicationController
   end
 
   def show
+      @owner = Owner.find(params[:id])
   end
 
   def new
@@ -24,4 +25,10 @@ class OwnersController < ApplicationController
 
   def destroy
   end
+
+  private
+  def owner_params
+    params.require(:owner).permit(:surname, :name, :kana_surname, :kana_name, :postal_code, :address, :phone_number, :email, :account_status)
+  end
+
 end
