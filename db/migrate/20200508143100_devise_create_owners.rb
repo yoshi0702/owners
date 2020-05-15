@@ -38,7 +38,7 @@ class DeviseCreateOwners < ActiveRecord::Migration[5.2]
       t.string :kana_name, null: false
       t.string :company_name, null: false
       t.string :kana_company_name, null: false
-      t.string :profire_image_id, null: false
+      t.string :profire_image_id
       t.string :postal_code, null: false
       t.string :address, null: false
       t.string :phone_number, null: false

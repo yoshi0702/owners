@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
 		t.string :project_title, null: false
 		t.string :summary_sentence, null: false
 		t.string :area, null: false
-		t.string :advertising_image_id, null: false
+		t.string :advertising_image_id
 		t.text :text, null: false
 		t.boolean :publication_status, null: false
 		t.string :post_period, null: false

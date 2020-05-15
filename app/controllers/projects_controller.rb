@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
 
   def show
    @project = Project.find(params[:id])
+   @supportersSum = Supporter.where(project_id: @project.id).group(:project_id).count
   end
 
   def new

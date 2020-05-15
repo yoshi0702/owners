@@ -42,7 +42,7 @@ Project.create(
 	area: "東京都",
 	text: "2010年の営業開始から、今日まで素敵なお客様方に支えていただいて頑張ってきました。",
 	publication_status: 0,
-	target_amount: 1,000,000,
+	target_amount: 1000000
 	)
 
 Area.create(name: '北海道', )

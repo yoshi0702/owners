@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_120849) do
     t.string "kana_name", null: false
     t.string "company_name", null: false
     t.string "kana_company_name", null: false
-    t.string "profire_image_id", null: false
+    t.string "profire_image_id"
     t.string "postal_code", null: false
     t.string "address", null: false
     t.string "phone_number", null: false
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_120849) do
     t.string "project_title", null: false
     t.string "summary_sentence", null: false
     t.string "area", null: false
-    t.string "advertising_image_id", null: false
+    t.string "advertising_image_id"
     t.text "text", null: false
     t.boolean "publication_status", null: false
     t.string "post_period", null: false
@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_120849) do
     t.string "name", null: false
     t.string "kana_surname", null: false
     t.string "kana_name", null: false
-    t.string "profire_image_id", null: false
+    t.string "profire_image_id"
     t.string "postal_code", null: false
     t.string "address", null: false
     t.string "phone_number", null: false
