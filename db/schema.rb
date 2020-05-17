@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_120849) do
+ActiveRecord::Schema.define(version: 2020_05_17_103633) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_120849) do
   end
 
   create_table "areas", force: :cascade do |t|
-    t.integer "project_id", null: false
     t.string "prefecture_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -90,7 +89,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_120849) do
     t.string "number_of_supporters", null: false
     t.string "project_title", null: false
     t.string "summary_sentence", null: false
-    t.string "area", null: false
     t.string "advertising_image_id"
     t.text "text", null: false
     t.boolean "publication_status", null: false
@@ -99,6 +97,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_120849) do
     t.string "total_support", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "area_id"
   end
 
   create_table "supporters", force: :cascade do |t|
@@ -107,7 +106,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_120849) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "project_id", null: false
+    t.integer "project_id"
     t.string "surname", null: false
     t.string "name", null: false
     t.string "kana_surname", null: false
@@ -116,7 +115,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_120849) do
     t.string "postal_code", null: false
     t.string "address", null: false
     t.string "phone_number", null: false
-    t.string "owned_points", null: false
+    t.string "owned_points"
     t.boolean "account_status", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

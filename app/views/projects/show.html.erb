@@ -5,17 +5,26 @@
 		</div>
 
 		<div class="col-xs-4 col-xs-offset-2">
-			<%= attachment_image_tag @project, :image, :fill, 300, 200, size: "300x250", fallback: "no_image.png" %>
+			<%= attachment_image_tag @project, :advertising_image, :fill, 300, 200, size: "300x250", fallback: "no_image.png" %>
 		</div>
 
 		<div class="col-xs-4">
 			<table class="table">
+
 				<tr>
-					<th>地域</th><td><%= @project.prefecture_name %></td>
+					<th>タイトル</th><td><%= @project.project_title %></td>
 				</tr>
 
 				<tr>
-					<th>出資者数</th><td><%= @supportersSum.project_id %></td>
+					<th>概要</th><td><%= @project.summary_sentence %></td>
+				</tr>
+
+				<tr>
+					<th>地域</th><td><%= @area.prefecture_name %></td>
+				</tr>
+
+				<tr>
+					<th>出資者数</th><td><%= @supportersSum %></td>
 				</tr>
 
 				<tr>
@@ -27,7 +36,7 @@
 				</tr>
 
 				<tr>
-					<th>出資金総額</th><td><%= @project.tax_included_price %>円</td>
+					<th>出資金総額</th><td><%= @project.total_support %>円</td>
 				</tr>
 
 				<tr>

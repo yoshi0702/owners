@@ -1,3 +1,6 @@
 class Project < ApplicationRecord
-	attachment :advertising_image_id
+	attachment :advertising_image
+
+	belongs_to :owner
+	belongs_to :areas
 end

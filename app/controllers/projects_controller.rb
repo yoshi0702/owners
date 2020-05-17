@@ -1,10 +1,14 @@
 class ProjectsController < ApplicationController
   def index
+    @projects = Project.all.page(params[:page]).per(10)
+    @areas = Area.all
   end
 
   def show
    @project = Project.find(params[:id])
-   @supportersSum = Supporter.where(project_id: @project.id).group(:project_id).count
+   @area = Area.find(@project.area_id)
+   # binding.pry
+   @supportersSum = Supporter.where(project_id: @project.id).count
   end
 
   def new
@@ -16,14 +20,20 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(Project_params)
+    @project = current_owner.projects.build(project_params)
+    @project.number_of_supporters = 1
+    @project.publication_status = true
+    @project.post_period = 60
+    @project.total_support = 60
     @areas = Area.all
-    if @Project.save
-       redirect_to Project_url(@Project)
+    if @project.save
+       redirect_to project_url(@project)
     else
       render 'new'
     end
   end
+
+
 
   def update
   end
@@ -32,10 +42,14 @@ class ProjectsController < ApplicationController
   end
 
   private
-  def product_params
+  def project_params
     params.require(:project).permit(:number_of_supporters,
                              :project_title, :summary_sentence,
-                             :area, :advertising_image_id,
-                             :text,:post_period,:target_amount,:total_support)
+                             :advertising_image,:text,:area_id,
+                             :post_period,:target_amount,:total_support)
+  end
+
+  def area_id
+    @project.area
   end
 end

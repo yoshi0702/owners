@@ -1,2 +1,39 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<h1>プロジェクト一覧</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-2" >
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>地域検索</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @areas.each do |area| %>
+						<tr>
+							<td>
+								<%=link_to area.prefecture_name, projects_path(area_id: area.id) %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="col-xs-10 ">
+				<h3>プロジェクト一覧 (全<%= @projects.count %>件)</h3>
+			<div class="row">
+				<% @projects.each do |project| %>
+					<div class="col-xs-3">
+						<%= attachment_image_tag project, :advertising_image, :limit, 50, 50, size: "180x150", fallback: "no_image.png" %><br>
+						<span>タイトル</span><span>  <%= link_to project.project_title, project_path(project.id) %></span>
+						<p> <%= project.total_support %>円</p>
+
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -32,7 +32,7 @@ class DeviseCreateSupporters < ActiveRecord::Migration[5.2]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.integer :project_id, null: false
+      t.integer :project_id
       t.string :surname, null: false
       t.string :name, null: false
       t.string :kana_surname, null: false
@@ -41,7 +41,7 @@ class DeviseCreateSupporters < ActiveRecord::Migration[5.2]
       t.string :postal_code, null: false
       t.string :address, null: false
       t.string :phone_number, null: false
-      t.string :owned_points, null: false
+      t.string :owned_points
       t.boolean :account_status, null: false, default: true
       t.timestamps null: false
     end
