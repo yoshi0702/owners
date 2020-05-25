@@ -27,7 +27,7 @@
 				<% @projects.each do |project| %>
 					<div class="col-xs-3">
 						<%= attachment_image_tag project, :advertising_image, :limit, 50, 50, size: "180x150", fallback: "no_image.png" %><br>
-						<span>タイトル</span><span>  <%= link_to project.project_title, project_path(project.id) %></span>
+					<span>  <%= link_to project.project_title, project_path(project.id) %></span>
 						<p> <%= project.total_support %>円</p>
 
 					</div>

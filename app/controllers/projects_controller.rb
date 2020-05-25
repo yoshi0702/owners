@@ -8,7 +8,10 @@ class ProjectsController < ApplicationController
    @project = Project.find(params[:id])
    @area = Area.find(@project.area_id)
    # binding.pry
-   @supportersSum = Supporter.where(project_id: @project.id).count
+   #@supportersSum = Supporter.where(project_id: @project.id).count
+   @supportersSum = PointHistory.where(project_id: @project.id).group(:supporter_id).count(:supporter_id)
+   @point_history = PointHistory.new
+
   end
 
   def new
@@ -21,12 +24,12 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_owner.projects.build(project_params)
-    @project.number_of_supporters = 1
+    @project.number_of_supporters = 0
     @project.publication_status = true
     @project.post_period = 60
-    @project.total_support = 60
-    @areas = Area.all
+    @project.total_support = 0
     if @project.save
+      # binding.pry
        redirect_to project_url(@project)
     else
       render 'new'

@@ -2,5 +2,5 @@ class Project < ApplicationRecord
 	attachment :advertising_image
 
 	belongs_to :owner
-	belongs_to :areas
+	belongs_to :area
 end

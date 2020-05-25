@@ -1,2 +1,134 @@
-<h1>Owners#edit</h1>
-<p>Find me in app/views/owners/edit.html.erb</p>
+<div class="container">
+
+<h3>　登録情報編集　</h3>
+<%= form_for(@owner, url: owner_path) do |f| %>
+
+  <div class="form-group col-xs-9">
+        <%= label_tag(:full_name, '名前', {class: "col-xs-3"})%>
+        <div class="col-xs-4">
+          <%= f.text_field :surname, placeholder: "姓",autofocus: true, class: "form-control" %>
+        </div>
+        <div class="col-xs-4">
+          <%= f.text_field :name, placeholder: "名", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= label_tag :kana_full_name, 'カナ', class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.text_field :kana_surname, placeholder: "セイ", class: "form-control" %>
+        </div>
+        <div class="col-xs-4">
+          <%= f.text_field :kana_name, placeholder: "メイ", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :email, 'メールアドレス', class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.email_field :email, placeholder: "email@example.com", autocomplete: "email", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :postal_code, "郵便番号(ハイフンなし)", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.text_field :postal_code, placeholder: "1234567", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :address, '住所', class: "col-xs-3" %>
+        <div class="col-xs-6">
+          <%= f.text_field :address, placeholder: "東京都＊＊区", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :phone_number, "電話番号(ハイフンなし)", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.text_field :phone_number, placeholder: "000000000", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :company_name, "会社名", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.text_field :company_name, placeholder: "株式会社○○○○", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :kana_company_name, "会社名（カナ）", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.text_field :kana_company_name, placeholder: "カブシキガイシャ○○○○", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :password, "パスワード(6文字以上)", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.password_field :password, placeholder: "******", autocomplete: "new-password", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :password_confirmation, "パスワード(確認用)", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.password_field :password_confirmation, placeholder: "******", autocomplete: "new-password", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-4 col-xs-offset-2">
+        <%= f.label :profire_image, "プロフィール画像", class: "col-xs-3" %>
+        <%= attachment_image_tag @owner, :profire_image, :fill, 200, 150, fallback: "no_image.png" %>
+        <%= f.attachment_field :profire_image %>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :bank_name, "銀行名", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.text_field :bank_name, placeholder: "○○○○銀行", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :branch_name, "支店名", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.text_field :branch_name, placeholder: "○○○○支店", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :account_type, "口座種類", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.text_field :account_type, placeholder: "普通", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :account_number, "口座番号", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.text_field :account_number, placeholder: "1234567", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
+        <%= f.label :account_holder, "口座名義", class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.text_field :account_holder, placeholder: "コウザメイギ", class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "編集内容を保存する", class: "btn btn-success col-xs-2 col-xs-offset-5" %>
+      </div>
+    <% end %>
+  </div>
+
+<div class="row">
+<%= link_to '退会する',  owner_session_path, class: "btn btn-danger col-xs-1 col-xs-offset-2" %>
+</div>
+
+
+</div>

@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
  resources :buy_points
- resources :point_historys
+ resource :point_historys
  resources :favorites
  resources :projects
- resources :supporter
+ resource :supporter
  resources :areas
- resources :owner
+ resource :owner
 
 root 'home#top'
 get '/' ,to: 'home#top'
+post 'status_change',to: 'point_historys#status_change'
 # 支援者側のルーティング
   devise_for :supporters,controllers: {
   	sessions:      'supporters/sessions',

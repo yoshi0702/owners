@@ -1,2 +1,37 @@
-<h1>BuyPoints#index</h1>
-<p>Find me in app/views/buy_points/index.html.erb</p>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-10 ">
+				<h3>ポイント購入者一覧 (全<%= @buy_points.count %>件)</h3>
+			<div class="row">
+				<table class="table table-bordered">
+					<thead>
+						<tr class="success">
+							<th>ポイント購入日</th>
+							<th>ポイント購入者</th>
+							<th>入金金額</th>
+							<th>入金ステータス</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @buy_points.each do |b| %>
+							<tr>
+							    <td><span><%= link_to b.created_at, buy_point_path(b.id) %></span></td>
+								<td><%= b.supporter.surname %><%= b.supporter.name %></td>
+								<td><%= b.purchase_point %>P</td>
+								<td>
+									<% if b.deposit_status == "入金確認" %>
+										<span>入金確認</span>
+									<% else %>
+										<span>入金待ち</span>
+									<% end %>
+								</td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+

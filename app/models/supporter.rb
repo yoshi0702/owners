@@ -5,4 +5,10 @@ class Supporter < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   attachment :profire_image
+  has_many :buy_points
+  has_many :point_historys
+
+  def full_name
+    self.surname + self.name
+  end
 end

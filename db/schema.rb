@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_17_103633) do
+ActiveRecord::Schema.define(version: 2020_05_24_080953) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,8 +33,6 @@ ActiveRecord::Schema.define(version: 2020_05_17_103633) do
   create_table "buy_points", force: :cascade do |t|
     t.integer "supporter_id", null: false
     t.string "purchase_point", null: false
-    t.string "purchase_confirmation_date", null: false
-    t.string "payment_confirmation_date", null: false
     t.boolean "deposit_status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -78,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_103633) do
 
   create_table "point_histories", force: :cascade do |t|
     t.integer "supporter_id", null: false
-    t.integer "project_id", null: false
+    t.integer "project_id"
     t.string "point", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -98,6 +96,13 @@ ActiveRecord::Schema.define(version: 2020_05_17_103633) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "area_id"
+  end
+
+  create_table "support_projects", force: :cascade do |t|
+    t.integer "supporter_id", null: false
+    t.integer "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "supporters", force: :cascade do |t|

@@ -1,9 +1,11 @@
 class OwnersController < ApplicationController
+  before_action :authenticate_owner!
   def index
   end
 
   def show
-      @owner = Owner.find(params[:id])
+      @owner = Owner.find(current_owner.id)
+      @projects = Project.find[:owner_id.current_owner.id]
   end
 
   def new
@@ -11,16 +13,22 @@ class OwnersController < ApplicationController
   end
 
   def edit
+      @owner = Owner.find(current_owner.id)
   end
 
   def create
     @owner = PostImage.new(post_image_params)
-    @owner.owner_id = current_owner.id
     @owner.save
     redirect_to root_path
   end
 
   def update
+      @owner = Owner.find(current_owner.id)
+        if @owner.update(owner_params)
+           redirect_to owner_path
+        else
+            render :edit
+        end
   end
 
   def destroy

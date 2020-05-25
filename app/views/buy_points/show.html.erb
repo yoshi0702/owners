@@ -1,2 +1,55 @@
-<h1>BuyPoints#show</h1>
-<p>Find me in app/views/buy_points/show.html.erb</p>
+
+
+<div class="container">
+	<h1>ポイント購入履歴詳細画面</h1>
+	<br>
+
+	<div class="row">
+		<div class="col-xs-3">
+			<p>購入者</p>
+		</div>
+		<div class="col-xs-3">
+			<%= @buy_point.supporter.surname %><%= @buy_point.supporter.name %>
+		</div>
+	</div>
+	<br>
+
+	<div class="row">
+		<div class="col-xs-6">
+			<table class="table table-hove">
+				<thead>
+					<tr>
+						<th>支援者名</th>
+						<th>購入ポイント</th>
+						<th>購入確認日</th>
+						<th>入金確認日</th>
+						<th>入金ステータス</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<%# @buy_points.each do |buy_point| %>
+					<tr>
+						<td><%= @buy_point.supporter.surname %><%= @buy_point.supporter.name %></td>
+						<td><%= @buy_point.purchase_point %>P</td>
+						<td><%= @buy_point.created_at %></td>
+						<td>
+							<%= form_for(@buy_point, url: buy_point_path(@buy_point)) do |f| %>
+							<!-- :orders_product_idにorder_product.idを渡してどの商品かを識別する -->
+							<%#= hidden_field_tag :supporter_id, "#{order_product.id}"  %>
+							<%= f.select :deposit_status, BuyPoint.deposit_statuses.keys %>
+							<%= f.submit "更新", class: "btn btn-primary", id: "deposit_status"%>
+							<% end %>
+						</td>
+					</tr>
+					<%# end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+
+

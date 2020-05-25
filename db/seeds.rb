@@ -32,7 +32,44 @@ Supporter.create(
 	postal_code: "1234567",
 	address: "東京都渋谷区笹塚",
 	phone_number: "1234567890",
-	owned_points: "100,000",
+	owned_points: 100000,
+	)
+
+Project.create(
+	owner_id: 1,
+	number_of_supporters: 0,
+    project_title: "カフェ存続の危機を乗り越えたい！",
+  	summary_sentence: "自粛営業で存続の危機！新宿『カフェ　kasuga』に力をお貸しください！",
+	text: "2010年の営業開始から、今日まで素敵なお客様方に支えていただいて頑張ってきました。",
+	post_period: 60,
+	publication_status: true,
+	target_amount: 1000000,
+	total_support: 0,
+	area_id: 13,
+	)
+
+Project.create(
+	owner_id: 1,
+	number_of_supporters: 0,
+    project_title: "タイ料理店存続の危機を乗り越えたい！",
+  	summary_sentence: "自粛営業で存続の危機！大垣『タイ料理　Wakabayashi』に力をお貸しください！",
+	text: "助けてください。やばいです。",
+	post_period: 60,
+	publication_status: true,
+	target_amount: 2000000,
+	total_support: 0,
+	area_id: 21,
+	)
+
+BuyPoint.create(
+	supporter_id: 1,
+	purchase_point: 50000,
+	deposit_status: true,
+	)
+
+PointHistory.create(
+	supporter_id: 1,
+	point:50000,
 	)
 
 Area.create(prefecture_name: '北海道', )
@@ -82,16 +119,3 @@ Area.create(prefecture_name: '大分', )
 Area.create(prefecture_name: '宮崎', )
 Area.create(prefecture_name: '鹿児島', )
 Area.create(prefecture_name: '沖縄', )
-
-Project.create(
-	owner_id: 1,
-    project_title: "カフェ存続の危機を乗り越えたい！",
-  	summary_sentence: "自粛営業で存続の危機！新宿『カフェ　kasuga』に力をお貸しください！",
-	text: "2010年の営業開始から、今日まで素敵なお客様方に支えていただいて頑張ってきました。",
-	number_of_supporters: 1,
-	post_period: 60,
-	publication_status: 0,
-	target_amount: 1000000,
-	total_support: 100000,
-	area_id: 1
-	)

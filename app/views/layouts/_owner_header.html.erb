@@ -9,14 +9,17 @@
     </div>
     <div class="collapse navbar-collapse">
      <ul class="nav navbar-nav navbar-right" style="font-size: 20px; color: #ffffff;">
-
+          <% if owner_signed_in? %>
 
           <li>ようこそ<%= current_owner.surname %><%= current_owner.name %>さん！</li>
 
-
-          <li><%#= link_to 'マイページへ', owner_path, :style=>"color: white;" %></li>
-          <li><%#= link_to 'プロフィール編集', edit_owner_path, :style=>"color: white;" %></li>
+          <li><%= link_to 'プロジェクトを作成', new_project_path, :style=>"color: white;" %></li>
+          <li><%= link_to 'マイページ', owner_path, :style=>"color: white;" %></li>
+          <li><%= link_to 'プロフィール編集', edit_owner_path, :style=>"color: white;" %></li>
           <li><%= link_to 'ログアウト', destroy_owner_session_path, method: :delete, :style=>"color: white;" %></li>
+          <% else %>
+          <%= render "layouts/home_header" %>
+          <% end %>
 
       </ul>
     </div>
