@@ -9,7 +9,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
 		t.string :advertising_image_id
 		t.text :text, null: false
 		t.boolean :publication_status, null: false
-		t.string :post_period, null: false
+		t.date :deadline, null: false
 		t.string :target_amount, null: false
 		t.string :total_support, null: false
 		t.timestamps

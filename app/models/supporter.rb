@@ -8,6 +8,10 @@ class Supporter < ApplicationRecord
   has_many :buy_points
   has_many :point_historys
 
+
+  has_many :support_projects
+  has_many :projects, through: :support_projects
+
   def full_name
     self.surname + self.name
   end

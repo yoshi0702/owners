@@ -25,11 +25,16 @@
 				<h3>プロジェクト一覧 (全<%= @projects.count %>件)</h3>
 			<div class="row">
 				<% @projects.each do |project| %>
-					<div class="col-xs-3">
-						<%= attachment_image_tag project, :advertising_image, :limit, 50, 50, size: "180x150", fallback: "no_image.png" %><br>
+				<div class="col-xs-3">
+					<%= attachment_image_tag project, :advertising_image, :limit, 50, 50, size: "180x150", fallback: "no_image.png" %><br>
 					<span>  <%= link_to project.project_title, project_path(project.id) %></span>
-						<p> <%= project.total_support %>円</p>
-
+					<p>現在</p><p><%= project.total_support %>円</p>
+					 <% if (project.deadline - Date.today).to_i >= 0 %>
+					<p>残り</p><p><%= (project.deadline - Date.today).to_i %>日</p>
+					<% else %>
+					<th>終了</th>
+					<% end %>
+					<p>支援者</p><p><%=project.support_projects.count %>人</p>
 					</div>
 				<% end %>
 			</div>

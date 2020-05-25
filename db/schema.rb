@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_080953) do
     t.string "advertising_image_id"
     t.text "text", null: false
     t.boolean "publication_status", null: false
-    t.string "post_period", null: false
+    t.date "deadline", null: false
     t.string "target_amount", null: false
     t.string "total_support", null: false
     t.datetime "created_at", null: false

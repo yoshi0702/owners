@@ -40,6 +40,13 @@
       </div>
 
       <div class="form-group col-xs-9">
+        <%= f.label :deadline, '締切日', class: "col-xs-3" %>
+        <div class="col-xs-4">
+          <%= f.date_field :deadline, placeholder: "最大60日", class: "form-control"  %>日
+        </div>
+      </div>
+
+      <div class="form-group col-xs-9">
         <%= f.label :advertising_image_id, "メイン画像", class: "col-xs-4" %>
         <%= attachment_image_tag @project, :id, :fill, 200, 150, fallback: "no_image.png" %>
         <%= f.attachment_field :advertising_image %>

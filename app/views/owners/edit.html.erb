@@ -1,7 +1,9 @@
 <div class="container">
 
-<h3>　登録情報編集　</h3>
-<%= form_for(@owner, url: owner_path) do |f| %>
+  <h3>事業者登録情報編集</h3>
+
+  <div class="row">
+  <%= form_for(@owner, url: owner_path) do |f| %>
 
   <div class="form-group col-xs-9">
         <%= label_tag(:full_name, '名前', {class: "col-xs-3"})%>
@@ -126,9 +128,8 @@
     <% end %>
   </div>
 
-<div class="row">
-<%= link_to '退会する',  owner_session_path, class: "btn btn-danger col-xs-1 col-xs-offset-2" %>
-</div>
-
+  <div class="row">
+  <%= link_to '退会する',  owner_session_path, class: "btn btn-danger col-xs-1 col-xs-offset-2" %>
+  </div>
 
 </div>

@@ -4,8 +4,9 @@ class OwnersController < ApplicationController
   end
 
   def show
-      @owner = Owner.find(current_owner.id)
-      @projects = Project.find[:owner_id.current_owner.id]
+      @projects = current_owner.projects
+      # @owner = Owner.find(current_owner.id)
+      # @projects = Project.find(params[:id])
   end
 
   def new

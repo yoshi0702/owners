@@ -3,4 +3,8 @@ class Project < ApplicationRecord
 
 	belongs_to :owner
 	belongs_to :area
+
+
+	has_many :support_projects
+	has_many :projects, through: :support_projects
 end

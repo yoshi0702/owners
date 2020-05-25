@@ -6,7 +6,11 @@
 					<%= attachment_image_tag project, :advertising_image, :limit, 50, 50, size: "180x150", fallback: "no_image.png" %><br>
 					<span>  <%= link_to project.project_title, project_path(project.id) %></span>
 					<p>現在</p><p><%= project.total_support %>円</p>
-					<p>残り</p><p><%= (Date.new(project.created_at.utc.year, project.created_at.utc.month, project.created_at.utc.day) + project.post_period.to_i - Date.today).to_i %>日</p>
+					<% if (project.deadline - Date.today).to_i >= 0 %>
+					<p>残り</p><p><%= (project.deadline - Date.today).to_i %>日</p>
+					<% else %>
+					<th>終了</th>
+					<% end %>
 					<p>支援者</p><p><%= project.number_of_supporters %>人</p>
 
 				</div>

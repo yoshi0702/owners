@@ -2,76 +2,6 @@ Admin.create(
 	email: "admin@example.com",
 	password: "adminadmin",
 	)
-
-Owner.create(
-	email: "kasuga@example.com",
-	password: "kasugakasuga",
-	surname: "春日",
-	name: "俊彰",
-	kana_surname: "カスガ",
-	kana_name: "トシアキ",
-	postal_code: "1234567",
-	address: "埼玉県所沢市",
-	phone_number: "1234567890",
-	company_name: "株式会社春日",
-	kana_company_name: "カブシキガイシャカスガ",
-	bank_name: "三井住友銀行",
-	branch_name: "岐阜支店",
- 	account_type:"普通",
-  	account_number: "1111111",
-  	account_holder: "カスガトシアキ",
-	)
-
-Supporter.create(
-	email: "wakabayashi@example.com",
-	password: "wakabayashi",
-	surname: "若林",
-	name: "正恭",
-	kana_surname: "ワカバヤシ",
-	kana_name: "マサヤス",
-	postal_code: "1234567",
-	address: "東京都渋谷区笹塚",
-	phone_number: "1234567890",
-	owned_points: 100000,
-	)
-
-Project.create(
-	owner_id: 1,
-	number_of_supporters: 0,
-    project_title: "カフェ存続の危機を乗り越えたい！",
-  	summary_sentence: "自粛営業で存続の危機！新宿『カフェ　kasuga』に力をお貸しください！",
-	text: "2010年の営業開始から、今日まで素敵なお客様方に支えていただいて頑張ってきました。",
-	post_period: 60,
-	publication_status: true,
-	target_amount: 1000000,
-	total_support: 0,
-	area_id: 13,
-	)
-
-Project.create(
-	owner_id: 1,
-	number_of_supporters: 0,
-    project_title: "タイ料理店存続の危機を乗り越えたい！",
-  	summary_sentence: "自粛営業で存続の危機！大垣『タイ料理　Wakabayashi』に力をお貸しください！",
-	text: "助けてください。やばいです。",
-	post_period: 60,
-	publication_status: true,
-	target_amount: 2000000,
-	total_support: 0,
-	area_id: 21,
-	)
-
-BuyPoint.create(
-	supporter_id: 1,
-	purchase_point: 50000,
-	deposit_status: true,
-	)
-
-PointHistory.create(
-	supporter_id: 1,
-	point:50000,
-	)
-
 Area.create(prefecture_name: '北海道', )
 Area.create(prefecture_name: '青森', )
 Area.create(prefecture_name: '秋田', )
@@ -119,3 +49,85 @@ Area.create(prefecture_name: '大分', )
 Area.create(prefecture_name: '宮崎', )
 Area.create(prefecture_name: '鹿児島', )
 Area.create(prefecture_name: '沖縄', )
+
+Owner.create(
+	email: "kasuga@example.com",
+	password: "kasugakasuga",
+	surname: "春日",
+	name: "俊彰",
+	kana_surname: "カスガ",
+	kana_name: "トシアキ",
+	postal_code: "1234567",
+	address: "埼玉県所沢市",
+	phone_number: "1234567890",
+	company_name: "株式会社春日",
+	kana_company_name: "カブシキガイシャカスガ",
+	bank_name: "三井住友銀行",
+	branch_name: "岐阜支店",
+ 	account_type:"普通",
+  	account_number: "1111111",
+  	account_holder: "カスガトシアキ",
+	)
+
+Supporter.create(
+	email: "wakabayashi@example.com",
+	password: "wakabayashi",
+	surname: "若林",
+	name: "正恭",
+	kana_surname: "ワカバヤシ",
+	kana_name: "マサヤス",
+	postal_code: "1234567",
+	address: "東京都渋谷区笹塚",
+	phone_number: "1234567890",
+	owned_points: 100000,
+	)
+
+Project.create!(
+	owner_id: 1,
+	number_of_supporters: 0,
+    project_title: "カフェ存続の危機を乗り越えたい！",
+  	summary_sentence: "自粛営業で存続の危機！新宿『カフェ　kasuga』に力をお貸しください！",
+	text: "2010年の営業開始から、今日まで素敵なお客様方に支えていただいて頑張ってきました。",
+	deadline: Date.today + 10,
+	publication_status: true,
+	target_amount: 1000000,
+	total_support: 0,
+	area_id: 13,
+	)
+
+Project.create!(
+	owner_id: 1,
+	number_of_supporters: 0,
+    project_title: "カフェ存続の危機",
+  	summary_sentence: "自粛営業で存続の危機！新宿『カフェ　kasuga』に力をお貸しください！",
+	text: "2010年の営業開始から、今日まで素敵なお客様方に支えていただいて頑張ってきました。",
+	deadline: Date.today - 10,
+	publication_status: true,
+	target_amount: 1000000,
+	total_support: 0,
+	area_id: 13,
+	)
+
+Project.create!(
+	owner_id: 1,
+	number_of_supporters: 0,
+    project_title: "タイ料理店存続の危機を乗り越えたい！",
+  	summary_sentence: "自粛営業で存続の危機！大垣『タイ料理　Wakabayashi』に力をお貸しください！",
+	text: "助けてください。やばいです。",
+	deadline: Date.today + 20,
+	publication_status: true,
+	target_amount: 2000000,
+	total_support: 0,
+	area_id: 21,
+	)
+
+BuyPoint.create(
+	supporter_id: 1,
+	purchase_point: 50000,
+	deposit_status: true,
+	)
+
+PointHistory.create(
+	supporter_id: 1,
+	point:50000,
+	)
