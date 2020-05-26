@@ -15,6 +15,7 @@ post 'status_change',to: 'point_historys#status_change'
   	sessions:      'supporters/sessions',
   	registrations: 'supporters/registrations'
   }
+  get 'buy_point/finish', to: 'buy_points#finish'
 
 
 # 事業者側のルーティング

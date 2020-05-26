@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:id])
   end
 
   def create
@@ -37,6 +38,12 @@ class ProjectsController < ApplicationController
 
 
   def update
+      @project = Project.find(params[:id])
+        if @project.update(project_params)
+           redirect_to project_path
+        else
+            render :edit
+        end
   end
 
   def destroy

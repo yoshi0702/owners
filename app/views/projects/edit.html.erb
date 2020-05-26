@@ -1,2 +1,40 @@
-<h1>Projects#edit</h1>
-<p>Find me in app/views/projects/edit.html.erb</p>
+<div class="container">
+  <h3>プロジェクト編集</h3>
+
+  <div class="row">
+	    <%= form_for(@project) do |f| %>
+
+	      <div class="form-group col-xs-9">
+	        <%= f.label :project_title, "タイトル", class: "col-xs-3" %>
+	        <div class="col-xs-4">
+	          <%= f.text_field :project_title, placeholder: "あなたの気持ちをタイトルにしてください", class: "form-control"  %>
+	        </div>
+	      </div>
+
+	      <div class="form-group col-xs-9">
+	        <%= f.label :summary_sentence, '概要文', class: "col-xs-3" %>
+	        <div class="col-xs-6">
+	          <%= f.text_area :summary_sentence, placeholder: "3行程度で概要をまとめましょう", class: "form-control"  %>
+	        </div>
+	      </div>
+
+	      <div class="form-group col-xs-9">
+	        <%= f.label :text, "本文", class: "col-xs-3" %>
+	        <div class="col-xs-4">
+	          <%= f.text_area :text, placeholder: "******", class: "form-control" %>
+	        </div>
+	      </div>
+
+	      <div class="form-group col-xs-9">
+	        <%= f.label :advertising_image, "メイン画像", class: "col-xs-4" %>
+	        <%= attachment_image_tag @project, :advertising_image, :fill, 200, 150, fallback: "no_image.png" %>
+	        <%= f.attachment_field :advertising_image %>
+	      </div>
+
+	      <div class="actions">
+	        <%= f.submit "編集内容を保存する", class: "btn btn-success col-xs-2 col-xs-offset-5" %>
+	      </div>
+	    <% end %>
+  </div>
+
+</div>

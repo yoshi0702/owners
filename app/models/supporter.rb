@@ -11,6 +11,7 @@ class Supporter < ApplicationRecord
 
   has_many :support_projects
   has_many :projects, through: :support_projects
+  has_many :favorites, dependent: :destroy
 
   def full_name
     self.surname + self.name

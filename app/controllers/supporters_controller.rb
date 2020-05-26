@@ -14,6 +14,7 @@ class SupportersController < ApplicationController
       #   supporter_count = SupportProject.where(project_id: project.id).group(:supporter_id).pluck(:supporter_id).count
       #   @supporter_counts.store(project.id,supporter_count)
       # end
+      # いいねした記事のみを表示するためにリンクのパラメータに[:favorite]を持たせる
   end
 
 

@@ -1,4 +1,5 @@
 class BuyPointsController < ApplicationController
+   before_action :authenticate_admin!, only: [:index, :show]
   def index
     @buy_points = BuyPoint.all
   end
@@ -20,7 +21,7 @@ class BuyPointsController < ApplicationController
     @buy_point.supporter_id = current_supporter.id
     @buy_point.deposit_status = "入金待ち"
     if @buy_point.save
-       redirect_to buy_points_path(@buy_point)
+       redirect_to buy_point_finish_path
     else
        render 'new'
     end
@@ -51,6 +52,10 @@ class BuyPointsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def finish
+
   end
 
   private
