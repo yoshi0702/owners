@@ -22,7 +22,6 @@
 						<th>支援者名</th>
 						<th>購入ポイント</th>
 						<th>購入確認日</th>
-						<th>入金確認日</th>
 						<th>入金ステータス</th>
 					</tr>
 				</thead>
@@ -31,8 +30,8 @@
 					<%# @buy_points.each do |buy_point| %>
 					<tr>
 						<td><%= @buy_point.supporter.surname %><%= @buy_point.supporter.name %></td>
-						<td><%= @buy_point.purchase_point %>P</td>
-						<td><%= @buy_point.created_at %></td>
+						<td><%= @buy_point.purchase_point.to_i.to_s(:delimited) %>P</td>
+						<td><%= @buy_point.created_at.strftime("%Y-%m-%d %H:%M") %></td>
 						<td>
 							<%= form_for(@buy_point, url: buy_point_path(@buy_point)) do |f| %>
 							<!-- :orders_product_idにorder_product.idを渡してどの商品かを識別する -->

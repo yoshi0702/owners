@@ -23,12 +23,13 @@ class FavoritesController < ApplicationController
   end
 
   def update
+    
+  end
+
+  def destroy
     @project = Project.find(params[:project_id])
     favorite = current_supporter.favorites.find_by(article_id: @article.id)
     favorite.destroy
     respond_to :js
-  end
-
-  def destroy
   end
 end

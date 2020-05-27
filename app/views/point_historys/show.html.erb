@@ -32,8 +32,8 @@
 							<p><%= point_history.project.project_title %></p>
 							<% end %>
 						</td>
-						<td><%= point_history.point %></td>
-						<td><%= point_history.updated_at %></td>
+						<td><%= point_history.point.to_i.to_s(:delimited) %></td>
+						<td><%= point_history.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
 					</tr>
 					<% end %>
 				</tbody>

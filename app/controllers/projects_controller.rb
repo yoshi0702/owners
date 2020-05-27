@@ -1,7 +1,16 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all.page(params[:page]).per(10)
+
     @areas = Area.all
+    if params[:area_id]
+      @area = Area.find(params[:area_id])
+      @projects = Project.where(area_id: @area.id)
+    else
+      @projects = Project.all
+    end
+
+    # @projects = Project.all.page(params[:page]).per(10)
+    # @areas = Area.all
   end
 
   def show
