@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
  resources :buy_points
  resource :point_historys
- resources :favorites
- resources :projects
+ resources :projects do
+  resource :favorites, only: [:create, :destroy]
+end
  resource :supporter
  resources :areas
  resource :owner

@@ -84,6 +84,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'pry-rails'
 gem 'rails-i18n'
+gem "font-awesome-sass", "< 5.0.13"
 
 
 gem 'dotenv-rails'
