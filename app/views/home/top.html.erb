@@ -3,7 +3,7 @@
 		<div class="row">
 			<% @projects.each do |project| %>
 				<div class="col-xs-3">
-					<%= attachment_image_tag project, :advertising_image, :limit, 50, 50, size: "180x150", fallback: "no_image.png" %><br>
+					<%= attachment_image_tag project, :advertising_image, :limit, 50, 50, size: "180x150", fallback: image_tag("no_image.png") %><br>
 					<span>  <%= link_to project.project_title, project_path(project.id) %></span>
 					<p>現在</p><p><%= project.total_support %>円</p>
 					<% if (project.deadline - Date.today).to_i >= 0 %>

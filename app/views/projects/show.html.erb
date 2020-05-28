@@ -23,6 +23,10 @@
     	<% end %>
     	</div>
 
+    	<div id="favorites_buttons_<%= @project.id %>" class="col-md-2 col-xs-3">
+					<%= render 'projects/favorite', project: @project %>
+				</div>
+
 
 
 		<div class="col-xs-4">

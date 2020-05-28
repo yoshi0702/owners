@@ -17,6 +17,8 @@ post 'status_change',to: 'point_historys#status_change'
   }
   get 'buy_point/finish', to: 'buy_points#finish'
 
+  get 'projects/fav/:id' => 'projects#fav', as: "fav_projects"
+
 
 # 事業者側のルーティング
   devise_for :owners,controllers: {

@@ -1,10 +1,10 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.0"
 
-set :application, "my_app_name" # my_app_name → アプリ名
-set :repo_url, "git@example.com:me/my_repo.git" # git@example.com:me/my_repo.git → GitHubに登録しているアプリのアドレス
+set :application, "owners" # my_app_name → アプリ名
+set :repo_url, "git@github.com:yoshi0702/owners.git" # git@example.com:me/my_repo.git → GitHubに登録しているアプリのアドレス
 # アプリのアドレスは$ git remote -v コマンドで確認できます
-set :deploy_to, "/home/ec2-user/<owners>"
+set :deploy_to, "/home/ec2-user/owners"
 set :rbenv_ruby, '2.5.7'
 set :linked_files, %w{config/master.key .env}
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
