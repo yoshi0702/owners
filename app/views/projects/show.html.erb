@@ -22,10 +22,11 @@
     	<% end %>
     	<% end %>
     	</div>
-
+    		<% if supporter_signed_in? %>
     	<div id="favorites_buttons_<%= @project.id %>" class="col-md-2 col-xs-3">
 					<%= render 'projects/favorite', project: @project %>
 				</div>
+				<% end %>
 
 
 		<div class="col-xs-4">
