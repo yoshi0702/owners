@@ -1,18 +1,33 @@
 <div class="container">
-	<div class="col-xs-10 ">
+	<div class="col-xs-12 ">
 		<div class="row">
 			<% @projects.each do |project| %>
 				<div class="col-xs-3">
-					<%= attachment_image_tag project, :advertising_image, :limit, 300, 300, size: "180x150", fallback: "no_image.png" %><br>
-					<span>  <%= link_to project.project_title, project_path(project.id) %></span>
-					<p>現在</p><p><%= project.total_support %>円</p>
-					<% if (project.deadline - Date.today).to_i >= 0 %>
-					<p>残り</p><p><%= (project.deadline - Date.today).to_i %>日</p>
-					<% else %>
-					<th>終了</th>
-					<% end %>
-					<p>支援者</p><p><%= project.number_of_supporters %>人</p>
-
+					<div class="box-in">
+						<div class="box-thumbnail">
+							<%= attachment_image_tag project, :advertising_image, :limit, 300, 300, size: "285x210", fallback: "no_image.png" %><br>
+						</div>
+						<div class="box-info">
+							<div class="box-title">
+								<span>  <%= link_to project.project_title, project_path(project.id) %></span>
+							</div>
+							<div class="box-status">
+								<span>
+									<small>現在</small><%= project.total_support.to_i.to_s(:delimited) %>円
+								</span>
+								<span>
+									<small>支援者</small><%= project.number_of_supporters %>人
+								</span>
+								<span>
+									<% if (project.deadline - Date.today).to_i >= 0 %>
+									<small>残り</small><%= (project.deadline - Date.today).to_i %>日
+									<% else %>
+									<th>掲載終了</th>
+									<% end %>
+								</span>
+							</div>
+						</div>
+					</div>
 				</div>
 			<% end %>
 		</div>

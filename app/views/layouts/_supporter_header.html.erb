@@ -1,23 +1,23 @@
-<nav class="navbar navbar-dark" style="padding: 20px 100px; background-color:#663333;　">
+<nav class="navbar navbar-dark" style="padding: 10px 10px; background-color:white;　">
   <div class="container-fluid">
-    <div class="navbar-header" style="color: #663333;">
+    <div class="navbar-header" style="color: white;">
       <%= link_to root_path do %>
-        <h1 style="border: solid; :1px; padding: 10px 30px; color: white;">Owners</h1>
+      <h1 style="border; :1px; padding: 10px 30px; color: #333333;">Owners</h1>
       <% end %>
     </div>
     <div class="collapse navbar-collapse">
-     <ul class="nav navbar-nav navbar-right" style="font-size: 20px; color: #ffffff;">
+      <ul class="nav navbar-nav navbar-right" style="font-size: 15px;">
           <% if supporter_signed_in? %>
 
           <li>ようこそ<%= current_supporter.surname %><%= current_supporter.name %>さん！</li>
           <li><%= current_supporter.point_historys.all.sum(:point) %>P</li>
 
-          <li><%= link_to 'プロジェクトを見る', projects_path, :style=>"color: white;" %></li>
-          <li><%= link_to 'マイページへ', supporter_path, :style=>"color: white;" %></li>
-          <li><%= link_to 'プロフィール編集', edit_supporter_path, :style=>"color: white;" %></li>
-          <li><%= link_to 'ログアウト', destroy_supporter_session_path, method: :delete, :style=>"color: white;" %></li>
-          <li><%= link_to 'ポイント履歴確認', point_historys_path, :style=>"color: white;" %></li>
-          <li><%= link_to 'ポイント購入', new_buy_point_path, :style=>"color: white;" %></li>
+          <li><%= link_to 'プロジェクトを見る', projects_path, :style=>"color: #333333;" %></li>
+          <li><%= link_to 'マイページへ', supporter_path, :style=>"color: #333333;" %></li>
+          <li><%= link_to 'プロフィール編集', edit_supporter_path, :style=>"color: #333333;" %></li>
+          <li><%= link_to 'ログアウト', destroy_supporter_session_path, method: :delete, :style=>"color: #333333;" %></li>
+          <li><%= link_to 'ポイント履歴確認', point_historys_path, :style=>"color: #333333;" %></li>
+          <li><%= link_to 'ポイント購入', new_buy_point_path, :style=>"color: #333333;" %></li>
           <% else %>
           <%= render "layouts/home_header" %>
           <% end %>
@@ -25,3 +25,4 @@
     </div>
   </div>
 </nav>
+
