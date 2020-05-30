@@ -8,7 +8,6 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right" style="font-size: 15px;">
             <% if admin_signed_in? %>
-              <li>お疲れ様です</li>
               <li><%= link_to 'ポイント購入一覧', buy_points_path, :style=>"color: #333333;" %></li>
               <li><%= link_to '支援者一覧', supporter_path, :style=>"color: #333333;" %></li>
               <li><%= link_to '事業者一覧', owner_path, :style=>"color: #333333;" %></li>

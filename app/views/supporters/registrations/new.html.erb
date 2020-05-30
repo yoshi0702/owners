@@ -70,7 +70,7 @@
       <div class="form-group col-xs-9">
         <%= f.label :profire_image, "プロフィール画像", class: "col-xs-4" %>
         <%= attachment_image_tag @owner, :profire_image, :fill, 200, 150, fallback: "no_image.png" %>
-        <%= f.attachment_field :profire_image %>
+        <%= f.attachment_field :profire_image, class: "col-xs-4" %>
       </div>
 
       <div class="actions">
