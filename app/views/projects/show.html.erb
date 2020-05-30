@@ -73,7 +73,7 @@
 			</table>
 		</div>
 	</div>
-	<% if owner_signed_in? %>
+	<% if admin_signed_in? %>
     	<div id="favorites_buttons_<%= @project.id %>" class="col-md-2 col-xs-3">
 			<div class="row">
 			  	<%= link_to 'プロジェクトを編集する',  edit_project_path, class: "btn btn-danger col-xs-1 col-xs-offset-2" %>
