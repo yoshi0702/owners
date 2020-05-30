@@ -16,7 +16,7 @@
 									<small>現在</small><%= project.total_support.to_i.to_s(:delimited) %>円
 								</span>
 								<span>
-									<small>支援者</small><%= project.number_of_supporters %>人
+									<small>支援者</small><%= @supportersSum.count %>人
 								</span>
 								<span>
 									<% if (project.deadline - Date.today).to_i >= 0 %>

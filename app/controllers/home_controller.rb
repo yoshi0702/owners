@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
 	def top
 		@projects = Project.all
+		@supportersSum = PointHistory.where(project_id: @project.id).group(:supporter_id).count(:supporter_id)
 		# クラスをDateに無理くり変換
 		# @remaining_days = (Date.new(project.created_at.utc.year, project.created_at.utc.month, project.created_at.utc.day) + project.post_period.to_i - Date.today).to_i
 		# @remaining_days = {}
