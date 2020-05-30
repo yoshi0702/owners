@@ -55,7 +55,7 @@ https://docs.google.com/spreadsheets/d/1LXvBgy7WqnIXAV_yXLL4SPd3nxGcX1TARv3rKsjJ
 ・画像アップロード（refile/AWS S3）  
 
 ## 主な機能一覧
-https://docs.google.com/spreadsheets/d/1h24w8r3UtuNiOmxoTCwX2VrwMMeWtOm4KoNjUMxbg9A/edit#gid=0
+https://docs.google.com/spreadsheets/d/1myLGtIT-6HC8Q6JbLdiu-K8rOvSSGpyIVK_mLLar5NA/edit#gid=0
 
 ### 管理者機能
 ・プロジェクト一覧  
