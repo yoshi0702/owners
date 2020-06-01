@@ -45,9 +45,9 @@
 
 				<tr>
 					<% if (@project.deadline - Date.today).to_i >= 0 %>
-					<th>応募締切まで</th><td><%= (@project.deadline - Date.today).to_i %>日</td>
+					<th>掲載締切まで</th><td><%= (@project.deadline - Date.today).to_i %>日</td>
 					<% else %>
-					<th>終了</th>
+					<th>掲載期間</th><th>終了</th>
 					<% end %>
 				</tr>
 

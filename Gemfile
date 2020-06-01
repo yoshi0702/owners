@@ -85,6 +85,7 @@ gem 'jquery-rails'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem "font-awesome-sass", "< 5.0.13"
+gem 'ransack'
 
 
 gem 'dotenv-rails'
