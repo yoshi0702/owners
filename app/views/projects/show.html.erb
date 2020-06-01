@@ -63,6 +63,10 @@
 					<th>本文</th><td><%= @project.text %></td>
 				</tr>
 
+				<tr class="comment-score">
+                    <th>Score</th><td><%= @project&.score %></td>
+                </tr>
+
 				<tr>
 					<% if supporter_signed_in? %>
 	    				<div id="favorites_buttons_<%= @project.id %>" class="col-md-2 col-xs-3">

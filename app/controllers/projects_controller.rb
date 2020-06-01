@@ -36,6 +36,7 @@ class ProjectsController < ApplicationController
     @project.number_of_supporters = 0
     @project.publication_status = true
     @project.total_support = 0
+    @project.score = Language.get_data(project_params[:text])
     if @project.save
       # binding.pry
        redirect_to project_url(@project)
