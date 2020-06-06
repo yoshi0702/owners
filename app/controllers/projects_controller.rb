@@ -9,8 +9,6 @@ class ProjectsController < ApplicationController
       @projects = Project.all
     end
 
-    # @projects = Project.all.page(params[:page]).per(10)
-    # @areas = Area.all
   end
 
   def show
