@@ -1,22 +1,27 @@
 class ProjectsController < ApplicationController
   def index
-
     @areas = Area.all
-    if params[:area_id]
-      @area = Area.find(params[:area_id])
-      @projects = Project.where(area_id: @area.id)
-    else
-      @projects = Project.all
-    end
+    @projects = if params[:area_id]
+                  @area = Area.find(params[:area_id])
+                  Project.where(area_id: @area.id)
+                elsif params[:search]
+                  Project.where(project_title: params[:search])
+                else
+                  Project.all
+                end
+  end
 
+  def search
+    #Viewのformで取得したパラメータをモデルに渡す
+    @posts = Post.search(params[:search])
   end
 
   def show
-   @project = Project.find(params[:id])
-   @area = Area.find(@project.area_id)
-   #@remaining_day = (Date.new(@project.created_at.utc.year, @project.created_at.utc.month, @project.created_at.utc.day) + @project.post_period.to_i - Date.today).to_i
-   @supportersSum = PointHistory.where(project_id: @project.id).group(:supporter_id).count(:supporter_id)
-   @point_history = PointHistory.new
+     @project = Project.find(params[:id])
+     @area = Area.find(@project.area_id)
+     #@remaining_day = (Date.new(@project.created_at.utc.year, @project.created_at.utc.month, @project.created_at.utc.day) + @project.post_period.to_i - Date.today).to_i
+     @supportersSum = PointHistory.where(project_id: @project.id).group(:supporter_id).count(:supporter_id)
+     @point_history = PointHistory.new
 
   end
 

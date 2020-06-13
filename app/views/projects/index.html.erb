@@ -1,4 +1,4 @@
-<h1>プロジェクト一覧</h1>
+<h3>プロジェクト一覧</h3>
 
 <div class="container">
 	<div class="row">
@@ -20,6 +20,12 @@
 				</tbody>
 			</table>
 		</div>
+
+		<p>検索</p>
+		<%= form_tag(projects_path,:method => 'get') do %>
+		  <%= text_field_tag :search %>
+		  <%= submit_tag 'Search', :name => nil %>
+		<% end %>
 
 		<div class="col-xs-10 ">
 				<h3>プロジェクト一覧 (全<%= @projects.count %>件)</h3>
