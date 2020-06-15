@@ -17,22 +17,28 @@
 </div>
 
 
-<div class="container">
+
+<div class="box-in" style="margin-bottom: 20px;">
+	<div class="container">
 				<div class="item">
 				<% @projects.each do |project| %>
-				<div class="col-xs-3">
-					<%= attachment_image_tag project, :advertising_image, :limit, 300, 300, size: "280x220", fallback: "no_image.png" %><br>
-					<span>  <%= link_to project.project_title, project_path(project.id) %></span>
-					<p>現在</p><p><%= project.total_support %>円</p>
-					 <% if (project.deadline - Date.today).to_i >= 0 %>
-					<p>残り</p><p><%= (project.deadline - Date.today).to_i %>日</p>
-					<% else %>
-					<th>終了</th>
-					<% end %>
-					<p>支援者</p><p><%=project.support_projects.count %>人</p>
+					<div class="col-xs-3">
+						<%= attachment_image_tag project, :advertising_image, :limit, 300, 300, size: "280x220", fallback: "no_image.png" %><br>
+						<span>  <%= link_to project.project_title, project_path(project.id) %></span>
+					      <small>現在</small><p><%= project.total_support %>円</p>
+						<% if (project.deadline - Date.today).to_i >= 0 %>
+						　<small>残り</small><p><%= (project.deadline - Date.today).to_i %>日</p>
+						<% else %>
+						　<th>終了</th>
+						<% end %>
+						　<small>支援者</small><p><%=project.support_projects.count %>人</p>
 					</div>
 				<% end %>
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="col-xs-offset-1">
+	<h4>いいねしたプロジェクト</h4>
 </div>
