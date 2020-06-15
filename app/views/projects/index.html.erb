@@ -1,9 +1,12 @@
-<h3>プロジェクト一覧</h3>
-
-<div class="container">
+<div class="projects-index-container">
 	<div class="row">
 		<div class="col-xs-2" >
 			<table class="table table-bordered">
+			<p>検索</p>
+			<%= form_tag(projects_path,:method => 'get') do %>
+			  <%= text_field_tag :search %>
+			  <%= submit_tag 'Search', :name => nil %>
+			<% end %>
 				<thead>
 					<tr>
 						<th>地域検索</th>
@@ -21,18 +24,14 @@
 			</table>
 		</div>
 
-		<p>検索</p>
-		<%= form_tag(projects_path,:method => 'get') do %>
-		  <%= text_field_tag :search %>
-		  <%= submit_tag 'Search', :name => nil %>
-		<% end %>
 
 		<div class="col-xs-10 ">
 				<h3>プロジェクト一覧 (全<%= @projects.count %>件)</h3>
-			<div class="row">
+			<div class="container">
+				<div class="item">
 				<% @projects.each do |project| %>
 				<div class="col-xs-3">
-					<%= attachment_image_tag project, :advertising_image, :limit, 300, 300, size: "180x150", fallback: "no_image.png" %><br>
+					<%= attachment_image_tag project, :advertising_image, :limit, 300, 300, size: "280x220", fallback: "no_image.png" %><br>
 					<span>  <%= link_to project.project_title, project_path(project.id) %></span>
 					<p>現在</p><p><%= project.total_support %>円</p>
 					 <% if (project.deadline - Date.today).to_i >= 0 %>
@@ -47,4 +46,7 @@
 		</div>
 	</div>
 </div>
+
+
+
 

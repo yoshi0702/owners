@@ -18,11 +18,10 @@
 
 
 <div class="container">
-	<div class="col-xs-10 ">
-		<div class="row">
-			<% @projects.each do |project| %>
+				<div class="item">
+				<% @projects.each do |project| %>
 				<div class="col-xs-3">
-					<%= attachment_image_tag project, :advertising_image, :limit, 300, 300, size: "180x150", fallback: "no_image.png" %><br>
+					<%= attachment_image_tag project, :advertising_image, :limit, 300, 300, size: "280x220", fallback: "no_image.png" %><br>
 					<span>  <%= link_to project.project_title, project_path(project.id) %></span>
 					<p>現在</p><p><%= project.total_support %>円</p>
 					 <% if (project.deadline - Date.today).to_i >= 0 %>
@@ -31,9 +30,9 @@
 					<th>終了</th>
 					<% end %>
 					<p>支援者</p><p><%=project.support_projects.count %>人</p>
-
-				</div>
-			<% end %>
+					</div>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
