@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="navbar-header" style="color: white;">
       <%= link_to root_path do %>
-      <h1 style="border; :1px; padding: 10px 30px; color: #333333;">Owners</h1>
+      <h1 style="border; :1px; padding: 5px 30px; color: #333333;">Owners</h1>
       <% end %>
     </div>
     <div class="collapse navbar-collapse">
@@ -12,11 +12,6 @@
           <li><%= link_to "事業者ログイン", new_owner_session_path, :style=>"color: #333333;" %></li>
           <li><%= link_to "支援者ログイン", new_supporter_session_path, :style=>"color: #333333;" %></li>
           <li><%= link_to "お問い合わせ", :style=>"color: #333333;" %></li>
-       <div class="group">
-         <label for="text3" id="l_text3"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
-         <input id="text3" type="text" placeholder="キーワード検索">
-         <div class="text_underline"></div>
-      </div>
       </ul>
     </div>
   </div>
