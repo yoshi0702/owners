@@ -21,7 +21,9 @@ class PointHistorysController < ApplicationController
   def create
         # プロジェクト詳細にてログインユーザーが支援フォーム入力!
         @point_history = PointHistory.new(point_history_params)
-        if @point_history.point > current_supporter.point_historys.sum(:point)
+        p @point_history.point
+        p current_supporter.point_historys.sum(:point)
+        if @point_history.point.to_i > current_supporter.point_historys.sum(:point).to_i
             render :new
         else
             @point_history.supporter_id = current_supporter.id
