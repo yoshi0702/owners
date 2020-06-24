@@ -39,7 +39,7 @@
 									</div>
 									<div class="box-status">
 										<span>
-											<small>現在</small><%= project.total_support %>円
+											<small>現在</small><%= project.total_support.to_i.to_s(:delimited) %>円
 										</span>
 										<span>
 											<small>支援者</small><%=project.support_projects.count %>人
