@@ -52,11 +52,11 @@
 				</tr>
 
 				<tr>
-					<th>目標金額</th><td><%= @project.target_amount %>円</td>
+					<th>目標金額</th><td><%= @project.target_amount.to_i.to_s(:delimited) %>円</td>
 				</tr>
 
 				<tr>
-					<th>出資金総額</th><td><%= @project.total_support %>円</td>
+					<th>出資金総額</th><td><%= @project.total_support.to_i.to_s(:delimited) %>円</td>
 				</tr>
 
 				<tr>
@@ -68,11 +68,14 @@
                 </tr>
 
 				<tr>
+					<th>お気に入り</th>
+					<td>
 					<% if supporter_signed_in? %>
 	    				<div id="favorites_buttons_<%= @project.id %>" class="col-md-2 col-xs-3">
-						<%= render 'projects/favorite', project: @project %>
+							<%= render 'projects/favorite', project: @project %>
 						</div>
 					<% end %>
+					</td>
 				</tr>
 			</table>
 		</div>
