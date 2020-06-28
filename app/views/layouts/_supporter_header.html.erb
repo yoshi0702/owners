@@ -10,7 +10,7 @@
           <% if supporter_signed_in? %>
 
           <li>ようこそ<%= current_supporter.surname %><%= current_supporter.name %>さん！</li>
-          <li><%= current_supporter.point_historys.all.sum(:point) %>P</li>
+          <li><%= current_supporter.point_historys.all.sum(:point).to_i.to_s(:delimited) %>P</li>
 
           <li><%= link_to 'プロジェクトを見る', projects_path, :style=>"color: #333333;" %></li>
           <li><%= link_to 'マイページへ', supporter_path, :style=>"color: #333333;" %></li>
