@@ -18,7 +18,7 @@
 							<tr>
 							    <td><span><%= link_to b.created_at.strftime("%Y-%m-%d %H:%M"), buy_point_path(b.id) %></span></td>
 								<td><%= b.supporter.surname %><%= b.supporter.name %></td>
-								<td><%= b.purchase_point.to_i.to_s(:delimited) %>P</td>
+								<td><%= b.purchase_point.to_i.to_s(:delimited) %>円</td>
 								<td>
 									<% if b.deposit_status == "入金確認" %>
 										<span>入金確認</span>
